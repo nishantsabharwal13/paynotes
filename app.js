@@ -13,14 +13,12 @@ require.extensions['.scss'] = () => {
 const express = require('express');
 const path = require('path');
 const app = express();
-const ENV = process.env.NODE_ENV;
 
 const compression = require('compression');
 app.use(compression());
 
 const cors = require('cors');
 app.use(cors());
-
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -46,16 +44,15 @@ const mongooseOptions = {
 
 mongoose.connect(process.env.DB, mongooseOptions);
 
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 // view engine setup;
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
-// // request handler for server side rendering
-// const requestHandler = require('./requestHandler');
-// app.use(requestHandler);
+// request handler for server side rendering
+const requestHandler = require('./requestHandler');
+app.use(requestHandler);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -63,7 +60,6 @@ app.use(function (req, res, next) {
   err.status = 404;
   next(err);
 });
-
 
 // error handler
 app.use((err, req, res) => {

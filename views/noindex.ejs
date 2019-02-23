@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimum-scale=1">
+  <title>The Shirt Tailor</title>
+  <link rel="manifest" href="/manifest.json">
+  <script type="text/javascript">
+    navigator.serviceWorker && navigator.serviceWorker.register('/service-worker.js')
+      .then(function() {})
+      .catch(function() {});
+  </script>
+</head>
+<body>
+  <div id="app"><%- reactComponent -%></div>
+  <div id="google_translate_element"></div>
+  <script>
+   window.INITIAL_STATE=<%- initialState -%>
+  </script>
+</body>
+</html>
