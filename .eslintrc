@@ -1,0 +1,67 @@
+module.exports = {
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "amd": true,
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/jsx-uses-vars": 2,
+    "indent": [
+      "error",
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ], 
+        'arrow-parens': [
+      2, 'as-needed'
+    ],
+        'keyword-spacing': [
+      2,
+      {
+            before: true,
+            after: true,
+      }
+    ],
+        'quote-props': [
+      2, 'as-needed'
+    ],
+        'max-len': [
+      2,
+      {
+            code: 120,
+            tabWidth: 2,
+      }
+    ],
+        'no-multi-spaces': [
+      2,
+      {
+            exceptions: {
+                ImportDeclaration: true,
+        }
+      }
+    ],
+  }
+};
