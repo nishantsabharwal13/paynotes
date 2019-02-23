@@ -50,6 +50,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('ejs', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 
+
+// Routes and APIS
+const router = express.Router();
+app.use('/api', router);
+require('./routes')(router);
+// End Routes and APIs
+
 // request handler for server side rendering
 const requestHandler = require('./requestHandler');
 app.use(requestHandler);

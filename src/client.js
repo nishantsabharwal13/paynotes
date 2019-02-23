@@ -27,6 +27,4 @@ const Routes = (
   </Provider>
 );
 
-setTimeout(() => {
   loadComponents().then(() => hydrate(Routes, document.getElementById('app')));
-}, 0);

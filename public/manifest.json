@@ -1,0 +1,17 @@
+{
+  "lang": "en",
+  "short_name": "PN",
+  "name": "Paynotes",
+  "icons": [
+    {
+      "src": "",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?utm_source=from_launch_icon",
+  "theme_color": "#ccc",
+  "background_color": "#ccc",
+  "orientation": "portrait",
+  "display": "standalone"
+}

@@ -289,7 +289,6 @@ toolbox.router.get("/", toolbox.networkFirst, {});
 toolbox.router.get(/.js$/, toolbox.cacheFirst, {});
 toolbox.router.get(/.css$/, toolbox.cacheFirst, {});
 toolbox.router.get(/.(png|svg|jpeg|jpg)$/, toolbox.cacheFirst, {});
-toolbox.router.get(/https:\/\/fonts.googleapis.com/, toolbox.cacheFirst, {});
 
 
 
