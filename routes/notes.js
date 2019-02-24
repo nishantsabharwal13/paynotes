@@ -3,7 +3,7 @@ const Notes = require('../models/notes');
 
 module.exports = function (app) {
 
-  // fetching notes
+  // Fetching notes
 
   app.get('/notes', async (req, res) => {
 
@@ -14,43 +14,35 @@ module.exports = function (app) {
 
   });
 
-  //creating a new note
+  // Creating a new note
 
-  app.post('/notes', (req, res) => {
-    console.log(req.body.title)
+  app.post('/notes',(req, res) => {
     const note = {
       title: req.body.title,
       content: req.body.content,
-
     };
 
-    return Notes.create(note, (err, note) => {
+     Notes.create(note, async (err, note) => {
       if (err) {
         throw err;
       }
-      res.status(200).json({
-        success: true,
-        note
-      });
+    
+      res.status(200).json({ note });
     });
 
   });
 
-  // editing current note
+  // Editing current note
   
   app.put('/notes/:_id', (req, res) => {
     const query = { _id: req.params._id };
     const update = { $set: { title:req.body.title, content: req.body.content, updated_at: new Date() } };
-    console.log(query)
-    return Notes.findOneAndUpdate(query, update, (err, note) => {
-      console.log(note)
+
+    Notes.findOneAndUpdate(query, update, async (err, note) => {
       if (err) {
         throw err;
       }
-      res.status(200).json({
-        success: true,
-        note
-      });
+      return res.status(200).json({ note });
     });
   });
 

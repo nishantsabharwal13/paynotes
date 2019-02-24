@@ -1,0 +1,43 @@
+.note-wrapper {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  .note {
+    width: 200px;
+    border: 1px solid #ccc;
+    height: 200px;
+    margin: 20px;
+    display:flex;
+    flex-direction: column;
+
+    .title {
+      text-align: center;
+      background: #1c75eb;
+      color: #fff;
+      padding: 20px;
+      margin-bottom: 10px;
+    }
+
+    .content {
+      padding: 20px;
+      color: grey;
+      overflow: scroll;
+      flex: 1;
+    }
+    .operations {
+      margin-top: auto;
+      display: flex;
+      margin: 10px 0 20px;
+      justify-content: space-evenly;
+
+      .edit {
+        cursor: pointer;
+      }
+
+      .delete {
+        cursor: pointer;
+      }
+    }
+  }
+}

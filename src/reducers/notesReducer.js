@@ -15,12 +15,12 @@ export function notesReducer(
     case 'CREATE_NOTE':
       return {
         ...state,
-        notes: [...action.payload.notes],
+        notes: [...state.notes, action.payload.note],
       };
     case 'UPDATE_NOTE':
       return {
         ...state,
-        notes: [...action.payload.notes],
+        notes: [...state.notes, action.payload.note],
       };
   }
   return state;

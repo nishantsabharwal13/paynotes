@@ -12,6 +12,9 @@ import thunk from 'redux-thunk';
 // IMPORT COMBINED REDUCERS
 import reducers from './reducers/index';
 
+//IMPORT COMMON CSS
+import './stylesheets/common.scss';
+
 const middleware = applyMiddleware(thunk, logger);
 
 const initialState = window.INITIAL_STATE;

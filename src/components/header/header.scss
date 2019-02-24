@@ -1,0 +1,16 @@
+header {
+  margin: 20px;
+  display:flex;
+
+  img {
+    max-width: 300px;
+  }
+
+  button {
+    margin-left: auto;
+    background: none;
+    border:none;
+    font-size: 20px;
+    color: grey;
+  }
+}

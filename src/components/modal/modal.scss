@@ -1,0 +1,45 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  .overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background: #00000047;
+  }
+
+  .form {
+    background: #fff;
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    position: fixed;
+    align-items: center;
+    input {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 3px;
+      outline: none;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    button {
+      background-color: #1C75EB;
+      color: #fff;
+      padding: 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+  }
+}

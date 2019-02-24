@@ -4,17 +4,77 @@ import './home.scss';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getNotes } from '../../actions/notesAction';
-
+import { getNotes, createNote, updateNote } from '../../actions/notesAction';
+import Note from '../../components/note';
+import Modal from '../../components/modal';
 class Home extends React.Component {
-  state = {
 
+  constructor() {
+    super();
+    this.state = {
+      showModal: false,
+      title: '',
+      content:'',
+      _id: null
+    };
   }
+
   componentDidMount() {
     this.props.getNotes();
   }
+
+  closeModal = () => {
+    this.setState({ showModal: false });
+  }
+  
+  submitForm = (title, content, _id) => {
+    if(!_id) {
+      this.props.createNote({title,content})
+    } else {
+      this.props.updateNote(_id, { title, content})
+    }
+    this.closeModal();
+  }
+
+  editNote = note => {
+    this.setState({
+      showModal: true,
+      title: note.title,
+      content: note.content,
+      _id: note._id
+    })
+  }
+
+  deleteNote = id => {
+    console.log(id);
+  }
+
   render() {
-    return <h1>Let us home</h1>;
+    return (
+      <div className="home-page">
+        <div className="add-note" 
+          onClick={() => this.setState({showModal : true,title: '',content:'', _id: null})}
+        >
+           + Add a new Note
+        </div>
+
+        <Note 
+          notes={this.props.notes}
+          editNote={this.editNote}
+          deleteNote={this.deleteNote}
+        />
+        {
+          this.state.showModal ? (
+            <Modal
+              submitForm={this.submitForm}
+              title={this.state.title}
+              content={this.state.content}
+              _id={this.state._id}
+            />
+          ) : null
+        }
+      </div>
+    )
   }
 }
 
@@ -34,7 +94,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      getNotes: getNotes,
+      getNotes,
+      createNote,
+      updateNote
     },
     dispatch
   );

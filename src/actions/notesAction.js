@@ -19,12 +19,16 @@ export function getNotes(callback) {
 
 export function createNote(note, callback) {
   return function (dispatch) {
-    fetch('/api/note', {
+    fetch('/api/notes', {
       method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(note)
     })
+      .then(res => res.json())
       .then(res => {
-        dispatch({ type: 'CREATE_NOTE', payload: res.data });
+        dispatch({ type: 'CREATE_NOTE', payload: res });
         typeof callback != 'undefined' ? callback() : null;
       })
       .catch(err => {
@@ -38,10 +42,14 @@ export function updateNote(_id, note, callback) {
   return function (dispatch) {
     fetch(`/api/notes/${_id}`, {
       method: 'PUT',
+      headers: {
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify(note)
     })
+      .then(res => res.json())
       .then(res => {
-        dispatch({ type: 'UPDATE_NOTE', payload: res.data });
+        dispatch({ type: 'UPDATE_NOTE', payload: res });
         typeof callback != 'undefined' ? callback() : null;
       })
       .catch(err => {

@@ -1,0 +1,89 @@
+.login-page {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  width: 100%;
+
+  .title {
+    font-size: 30px;
+    color: grey;
+
+    span {
+      color: #33414f;
+    }
+  }
+  .description {
+    color: grey;
+    font-size: 15px;
+    padding: 10px 0;
+  }
+
+  .login-form {
+
+    div.form {
+      display: flex;
+      flex-direction: column;  
+
+      input {
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 3px;
+        outline: none;
+        border: 1px solid #ccc;
+        font-size: 15px;
+      }
+
+      button {
+        background-color: #1C75EB;
+        color: #fff;
+        padding: 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .error-message {
+    margin-top: 15px;
+    color:red;
+  }
+
+  .tabs {
+    margin-top:15px;
+    display: flex;
+    flex-direction: row;
+
+    .tab-button {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      padding:10px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-size: 20px;
+
+    }
+  }
+  .terms{
+    margin-top: 15px;
+    color: grey;
+    font-size: 15px;
+
+    span{
+      color: #33414f;
+      font-weight: bold;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .loginPage{
+
+    .login-tab {
+      flex: 1;
+    }
+    .login-image {
+      display: none;
+    }
+  }
+}
