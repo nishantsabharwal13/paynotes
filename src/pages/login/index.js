@@ -56,7 +56,7 @@ class Login extends React.Component {
               Welcome to <span>PayNote</span>
             </div>
             <div className="description">
-             Login to Pay Notes
+             Login to Pay Note
             </div>
             <div className="login-form">
               <div className="form">
