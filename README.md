@@ -31,7 +31,7 @@ npm start
 
 # Login Credentials : -
 
-username : username@example.com
+username : user@example.com
 
 password: 1234
 
