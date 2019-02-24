@@ -20,6 +20,7 @@ npm install
 # For development :- 
 
 npm run dev-server
+
 npm run build
 
 # For production :-
