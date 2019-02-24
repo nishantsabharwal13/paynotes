@@ -4,7 +4,7 @@ import './home.scss';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getNotes, createNote, updateNote, deleteNote } from '../../actions/notesAction';
+import { getNotes, createNote, saveEditedNote, deleteNote } from '../../actions/notesAction';
 import Note from '../../components/note';
 import Modal from '../../components/modal';
 import Cookies from '../../helpers/cookies';
@@ -27,6 +27,7 @@ class Home extends React.Component {
       this.setState({ isLoggedin: true })
     }
     else {
+      this.props.history.replace('/login');
       this.setState({ isLoggedin: false });
     }
   }
@@ -46,7 +47,7 @@ class Home extends React.Component {
     if(!_id) {
       this.props.createNote({title,content})
     } else {
-      this.props.updateNote(_id, { title, content})
+      this.props.saveEditedNote(_id, { title, content})
     }
     this.closeModal();
   }
@@ -115,7 +116,7 @@ function mapDispatchToProps(dispatch) {
     {
       getNotes,
       createNote,
-      updateNote,
+      saveEditedNote,
       deleteNote
     },
     dispatch

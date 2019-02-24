@@ -38,7 +38,7 @@ export function createNote(note, callback) {
 }
 
 
-export function updateNote(_id, note, callback) {
+export function saveEditedNote(_id, note, callback) {
   return function (dispatch) {
     fetch(`/api/notes/${_id}`, {
       method: 'PUT',
