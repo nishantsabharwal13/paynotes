@@ -39,7 +39,7 @@ username : user@example.com
 
 password: 1234
 
-# Heroku URl : -
+# Heroku URL : -
 
 https://my-pay-notes.herokuapp.com/
 
