@@ -1,5 +1,5 @@
 # Paynotes
-An application to save edit and delete notes on the server.
+An Isomorphic Application to save edit and delete notes on the server.
 
 # Tech Stack:
 
@@ -21,7 +21,7 @@ npm install
 
 # For development :- 
 
-npm run dev-server
+npm run dev-server 
 
 npm run build
 
