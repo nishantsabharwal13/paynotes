@@ -6,6 +6,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const ENV = process.env.NODE_ENV;
+const CriticalPlugin = require('webpack-plugin-critical').CriticalPlugin;
+
 
 const webpackConfig = {
   entry: {
@@ -32,6 +34,12 @@ const webpackConfig = {
         minifyCSS: true,
         minifyURLs: true
       }
+    }),
+    new CriticalPlugin({
+      src: __dirname + '/views/index.ejs',
+      inline: true,
+      minify: true,
+      dest: __dirname + '/views/index.ejs',
     }),
     new ScriptExtHtmlWebpackPlugin({
       defaultAttribute: 'defer',
