@@ -8,7 +8,7 @@ module.exports = function (app) {
   app.get('/notes', async (req, res) => {
 
     const notes = await Notes.find({});
-    const count = await Notes.count({});
+    const count = await Notes.countDocuments({});
 
     return res.status(200).json({ notes, count });
 

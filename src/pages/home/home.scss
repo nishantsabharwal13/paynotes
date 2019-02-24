@@ -1,8 +1,8 @@
 .home-page {
-  .add-note {
+  .add-note, .logout {
     display:flex;
     margin: 20px 53px;
-    font-size: 25px;
+    font-size: 20px;
     color: grey;
     flex-direction: row-reverse;
     cursor: pointer;

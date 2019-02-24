@@ -7,12 +7,14 @@ import { bindActionCreators } from 'redux';
 import { getNotes, createNote, updateNote, deleteNote } from '../../actions/notesAction';
 import Note from '../../components/note';
 import Modal from '../../components/modal';
+import Cookies from '../../helpers/cookies';
 class Home extends React.Component {
 
   constructor() {
     super();
     this.state = {
       showModal: false,
+      isLoggedin: false,
       title: '',
       content:'',
       _id: null
@@ -21,6 +23,19 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.props.getNotes();
+    if (Cookies.read('login')) {
+      this.setState({ isLoggedin: true })
+    }
+    else {
+      this.setState({ isLoggedin: false });
+    }
+  }
+
+  logout = () => {
+    this.setState({ isLoggedin: false });
+    Cookies.erase('login');
+    this.props.history.replace('/login');
+
   }
 
   closeModal = () => {
@@ -57,7 +72,11 @@ class Home extends React.Component {
         >
            + Add a new Note
         </div>
-
+        {
+          this.state.isLoggedin ? (
+            <div className="logout"  onClick={this.logout}>Logout</div>
+          ) : null
+        }
         <Note 
           notes={this.props.notes}
           editNote={this.editNote}
