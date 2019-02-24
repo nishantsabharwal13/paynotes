@@ -1,4 +1,4 @@
-# paynotes
+# Paynotes
 An application to save edit and delete notes on the server.
 
 # Tech Stack:
@@ -27,4 +27,12 @@ npm run build
 
 npm start
 
+# Login Credentials : -
+
+username : username@example.com
+password: 1234
+
+# Heroku URl : -
+
+https://my-pay-notes.herokuapp.com/
 
