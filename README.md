@@ -4,7 +4,9 @@ An application to save edit and delete notes on the server.
 # Tech Stack:
 
 Front end : ReactJS/ Redux
+
 Back end: NodeJS/ ExpressJS
+
 Database: MongoDB hosted on mongolabs
 
 # To get started:
@@ -30,6 +32,7 @@ npm start
 # Login Credentials : -
 
 username : username@example.com
+
 password: 1234
 
 # Heroku URl : -
