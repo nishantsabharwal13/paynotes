@@ -90,6 +90,7 @@ class Home extends React.Component {
               title={this.state.title}
               content={this.state.content}
               _id={this.state._id}
+              closeModal={this.closeModal}
             />
           ) : null
         }

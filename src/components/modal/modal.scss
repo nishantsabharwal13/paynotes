@@ -17,6 +17,12 @@
     background: #00000047;
   }
 
+  .close {
+    position: absolute;
+    right: 17px;
+    cursor: pointer;
+  }
+
   .form {
     background: #fff;
     padding: 20px;

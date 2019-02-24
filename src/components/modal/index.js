@@ -47,9 +47,14 @@ class Modal extends React.Component {
 
     return (
       <div className="modal">
-        <div className="overlay" onClick={this.props.closeModal}/>
+        <div className="overlay"/>
         <div className="form">
-          <h3>Create a new note</h3>
+          <h3>{this.props._id ? 'Edit' : 'Create a new'} note</h3>
+          <div className="close" onClick={this.props.closeModal}>
+            <i className="material-icons">
+              close
+            </i>
+          </div>
           <input type="title" name="title" value={title} onChange={this.onChange} placeholder="Enter title" />
           <input type="content" name="content" value={content} onChange={this.onChange} placeholder="Enter your content" />
           <button type="submit" onClick={this.onSubmit}>Submit</button>

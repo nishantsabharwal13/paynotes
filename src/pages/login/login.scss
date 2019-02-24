@@ -49,31 +49,6 @@
     color:red;
   }
 
-  .tabs {
-    margin-top:15px;
-    display: flex;
-    flex-direction: row;
-
-    .tab-button {
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      padding:10px;
-      margin-right: 10px;
-      cursor: pointer;
-      font-size: 20px;
-
-    }
-  }
-  .terms{
-    margin-top: 15px;
-    color: grey;
-    font-size: 15px;
-
-    span{
-      color: #33414f;
-      font-weight: bold;
-    }
-  }
 }
 
 @media only screen and (max-width: 768px) {
