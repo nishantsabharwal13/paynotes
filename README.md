@@ -19,6 +19,8 @@ cd paynotes/
 
 npm install
 
+create .env in root folder and paste the contents from .env.example
+
 # For development :- 
 
 npm run dev-server 
