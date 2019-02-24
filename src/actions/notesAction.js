@@ -60,3 +60,22 @@ export function updateNote(_id, note, callback) {
       });
   };
 }
+
+export function deleteNote(_id,callback) {
+  return function (dispatch) {
+    fetch(`/api/notes/${_id}`, {
+      method: 'DELETE'
+    })
+      .then(res => res.json())
+      .then(res => {
+        dispatch({ type: 'DELETE_NOTE', payload: _id });
+        typeof callback != 'undefined' ? callback() : null;
+      })
+      .catch(err => {
+        dispatch({
+          type: 'DELETE_NOTE_REJECTED',
+          payload: 'there was error deleting note'
+        });
+      });
+  };
+}

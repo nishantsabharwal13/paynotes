@@ -37,12 +37,27 @@ module.exports = function (app) {
   app.put('/notes/:_id', (req, res) => {
     const query = { _id: req.params._id };
     const update = { $set: { title:req.body.title, content: req.body.content, updated_at: new Date() } };
-
-    Notes.findOneAndUpdate(query, update, async (err, note) => {
+    const options = { new: true };
+    
+    Notes.findOneAndUpdate(query, update,options, (err, note) => {
       if (err) {
         throw err;
       }
-      return res.status(200).json({ note });
+      res.status(200).json({ note });
+    });
+  });
+
+
+  app.delete('/notes/:_id', (req, res) => {
+    const query = { _id: req.params._id };
+
+    Notes.findOne(query, function (err, note) {
+      if (err) {
+        return;
+      }
+      note.remove(function (err) {
+        res.json({ success: 'true', message: 'Note deleted' })
+      });
     });
   });
 

@@ -16,7 +16,7 @@ class Note extends React.Component {
           <div className="content">{note.content}</div>
           <div className="operations">
             <div className="edit" onClick={() => this.props.editNote(note)} >Edit</div>
-            <div className="delete" onClick={() => this.props.deleteNote(node._id)}>Delete</div>
+            <div className="delete" onClick={() => this.props.deleteNote(note._id)}>Delete</div>
           </div>
         </div>
       ));

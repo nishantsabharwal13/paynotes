@@ -4,7 +4,7 @@ import './home.scss';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getNotes, createNote, updateNote } from '../../actions/notesAction';
+import { getNotes, createNote, updateNote, deleteNote } from '../../actions/notesAction';
 import Note from '../../components/note';
 import Modal from '../../components/modal';
 class Home extends React.Component {
@@ -46,7 +46,7 @@ class Home extends React.Component {
   }
 
   deleteNote = id => {
-    console.log(id);
+    this.props.deleteNote(id);
   }
 
   render() {
@@ -96,7 +96,8 @@ function mapDispatchToProps(dispatch) {
     {
       getNotes,
       createNote,
-      updateNote
+      updateNote,
+      deleteNote
     },
     dispatch
   );

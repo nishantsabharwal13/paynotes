@@ -13,10 +13,17 @@ class Modal extends React.Component {
   }
   static getDerivedStateFromProps(nextProps,prevState) {
     const {title, content, _id} = nextProps;
-    return {
-      title,
-      content,
-      _id
+    if (nextProps._id != prevState._id) {
+      return {
+        title,
+        content,
+        _id
+      }
+    }
+    else {
+      return {
+        ...prevState
+      }
     }
   }
   onChange = e => {
