@@ -27,6 +27,8 @@ npm run dev-server
 
 npm run build
 
+open http://localhost:8181
+
 # For production :-
 
 npm start
